@@ -44,9 +44,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-jp);-web
   background-attachment:fixed}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.app{max-width:460px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 20px}
-.view{display:flex;flex-direction:column;gap:14px;flex:1}
+.app{max-width:460px;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 12px}
+.view{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0}
 .glass{background:var(--card);border:1px solid var(--card-line);border-radius:22px;box-shadow:var(--shadow);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .en{font-family:var(--f-en)}
 .dots{display:inline-flex;gap:4px;align-items:center}
@@ -54,68 +54,63 @@ button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .dots i.on{background:var(--accent)}
 
 /* Home */
-.brand{display:flex;align-items:center;gap:10px;justify-content:center;padding:10px 0 2px}
-.logo{width:40px;height:40px;border-radius:11px;background:var(--cta);display:grid;place-items:center}
+.brand{display:flex;align-items:center;gap:8px;justify-content:center;padding:2px 0 0;flex:none}
+.logo{width:32px;height:32px;border-radius:11px;background:var(--cta);display:grid;place-items:center}
 .logo svg{width:24px;height:24px}
-.brand h1{margin:0;font:900 28px/1 var(--f-en);letter-spacing:-.02em}
-.types{padding:12px 14px}
+.brand h1{margin:0;font:900 23px/1 var(--f-en);letter-spacing:-.02em}
+.types{padding:10px 12px;flex:none}
 .types header{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);font-weight:700;margin-bottom:8px}
 .types .row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .type-tile{background:var(--card-solid);border-radius:14px;padding:10px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;box-shadow:0 2px 8px rgba(160,80,0,.08)}
 .type-tile .dots i{width:7px;height:7px;background:var(--accent)}
 .type-tile small{font-size:11px;color:var(--ink-3);font-weight:700;height:14px}
 .type-tile small.done{color:var(--ok)}
-.levels{display:flex;flex-direction:column;gap:10px;padding:4px 0}
-.level{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;text-align:left;transition:transform .15s}
+.levels{display:flex;flex-direction:column;justify-content:center;gap:8px;flex:1;min-height:0}
+.level{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;flex:0 1 auto;min-height:0;text-align:left;transition:transform .15s}
 .level:nth-child(1){margin-left:18%}.level:nth-child(2){margin-left:12%;margin-right:4%}.level:nth-child(3){margin-left:4%;margin-right:10%}.level:nth-child(4){margin-right:16%}
 .level:active{transform:scale(.98)}
 .level b{font:900 24px/1 var(--f-en)} .level b span{font:700 13px var(--f-jp);margin-left:2px}
-.level .dots{margin-top:8px}
+.level .dots{margin-top:5px}
 .level .right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:700 13px var(--f-en);color:var(--ink-2);font-variant-numeric:tabular-nums}
 .badge{background:var(--accent);color:#fff;font:700 11px var(--f-jp);padding:3px 8px;border-radius:99px}
 .check{width:26px;height:26px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;font-weight:900}
 .level.current{outline:2px solid var(--accent)}
-.continue{display:flex;align-items:center;gap:14px;background:var(--cta);color:var(--cta-ink);border-radius:22px;padding:14px 16px;text-align:left;box-shadow:var(--shadow)}
-.continue .play{width:46px;height:46px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+.continue{flex:none;display:flex;align-items:center;gap:14px;background:var(--cta);color:var(--cta-ink);border-radius:22px;padding:10px 14px;text-align:left;box-shadow:var(--shadow)}
+.continue .play{width:40px;height:40px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
 .continue div{min-width:0;flex:1}
-.continue strong{display:block;font-size:19px}
+.continue strong{display:block;font-size:17px}
 .continue small{display:block;opacity:.7;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tools{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .tool{display:flex;gap:10px;align-items:center;padding:12px;text-align:left}
 .tool .ico{width:34px;height:34px;border-radius:10px;background:var(--card-solid);display:grid;place-items:center;flex:none;color:var(--accent-deep);font:900 12px var(--f-en)}
 .tool strong{display:block;font-size:14px}.tool small{display:block;font-size:11px;color:var(--ink-2)}
-.stats{display:flex;justify-content:space-around;padding:12px;text-align:center}
-.stats b{display:block;font:900 22px var(--f-en);font-variant-numeric:tabular-nums}
-.stats small{font-size:11px;color:var(--ink-2)}
-.bar{height:6px;background:var(--accent-soft);border-radius:99px;overflow:hidden;margin-top:6px}
-.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
 
 /* Lesson */
-.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.top{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .icon-btn{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--card-line);display:grid;place-items:center;font-weight:900;flex:none}
 .icon-btn.on{background:var(--cta);color:var(--cta-ink)}
 .title-btn{font:900 18px var(--f-jp);display:flex;align-items:baseline;gap:6px}
 .title-btn small{font:700 13px var(--f-en);color:var(--ink-2)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);padding:4px;border-radius:18px;gap:4px}
-.step{padding:7px 2px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--ink-3);font-weight:700}
+.steps{flex:none;display:grid;grid-template-columns:repeat(3,1fr);padding:4px;border-radius:18px;gap:4px}
+.step{padding:5px 2px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--ink-3);font-weight:700}
 .step .n{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:800 11px var(--f-en);background:var(--accent-soft);color:var(--ink-2)}
 .step.active{background:var(--card-solid);color:var(--ink);box-shadow:0 2px 8px rgba(160,80,0,.12)}
 .step.active .n{background:var(--accent);color:#fff}
 .step.done .n{background:var(--ink);color:var(--card-solid)}
-.heading{text-align:center}
-.heading h2{margin:2px 0 4px;font-size:22px;font-weight:900;text-wrap:balance}
+.heading{text-align:center;flex:none}
+.heading h2{margin:0;font-size:20px;font-weight:900;text-wrap:balance}
 .heading p{margin:0;font-size:13px;color:var(--ink-2)}
-.stage{flex:1;min-height:340px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative}
-.sentence{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:6px 6px;line-height:1.1;min-height:60px}
+.stage{flex:1;min-height:0;padding:14px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden}
+.sentence{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:4px 5px;line-height:1.1}
 .tok{display:inline-flex;flex-direction:column;align-items:center;border-radius:10px;padding:3px 5px;transition:background .12s,transform .12s,color .12s}
-.tok.beat{font:900 25px var(--f-en)}
+.tok.beat{font:900 23px var(--f-en)}
 .tok.glue{font:600 13px var(--f-en);color:var(--ink-2)}
 .tok.glue .kana{font:700 11px var(--f-jp);color:var(--accent-deep);margin-bottom:3px;background:var(--card-solid);padding:1px 6px;border-radius:6px}
 .tok.lit{background:var(--accent);color:#fff;transform:scale(1.08)}
 .tok.glue.lit{background:var(--accent-soft);color:var(--ink)}
 .tok.hit{background:var(--accent-soft)}
 .sentence.beats-only .tok.glue{opacity:.0;width:14px;overflow:hidden;padding:0}
-.trans{font-size:14px;color:var(--ink-2);text-align:center;margin:-6px 0 0}
+.trans{font-size:13px;color:var(--ink-2);text-align:center;margin:-4px 0 0}
 .slots{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .slot{min-width:46px;height:46px;border-radius:23px;border:2px solid var(--card-line);background:var(--card-solid);display:grid;place-items:center;padding:0 12px;font:800 16px var(--f-en);color:var(--ink-3);box-shadow:0 2px 8px rgba(160,80,0,.1)}
 .slot.next{border-color:var(--accent);color:var(--accent)}
@@ -125,23 +120,26 @@ button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .options{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .opt{padding:8px 14px;border-radius:99px;background:var(--card-solid);font:800 16px var(--f-en);border:1px solid var(--card-line);box-shadow:0 2px 6px rgba(160,80,0,.08)}
 .opt[disabled]{opacity:.3}
-.big{margin:22px 0;flex:none;width:120px;height:120px;border-radius:50%;background:var(--card-solid);border:3px solid var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;font:800 13px var(--f-jp);color:var(--ink);box-shadow:0 0 0 14px color-mix(in srgb,var(--accent) 14%,transparent),0 0 0 30px color-mix(in srgb,var(--accent) 7%,transparent);transition:transform .1s}
+.big{margin:14px 0;flex:none;width:96px;height:96px;border-radius:50%;background:var(--card-solid);border:3px solid var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;font:800 13px var(--f-jp);color:var(--ink);box-shadow:0 0 0 14px color-mix(in srgb,var(--accent) 14%,transparent),0 0 0 30px color-mix(in srgb,var(--accent) 7%,transparent);transition:transform .1s}
 .big.solid{background:var(--accent);color:#fff}
-.big .word{font:900 26px var(--f-en)}
+.big .word{font:900 22px var(--f-en)}
 .big svg{width:30px;height:30px}
 .big.pulse{animation:pulse .18s ease-out}
 @keyframes pulse{from{transform:scale(1.12)}to{transform:scale(1)}}
-.seg{display:flex;justify-content:center;gap:4px;padding:4px;border-radius:99px;align-self:center}
+.seg{flex:none;display:flex;justify-content:center;gap:4px;padding:4px;border-radius:99px;align-self:center}
 .seg button{padding:7px 16px;border-radius:99px;font-size:13px;font-weight:700;color:var(--ink-2)}
 .seg button.on{background:var(--card-solid);color:var(--ink);box-shadow:0 2px 6px rgba(160,80,0,.12)}
-.cta{background:var(--cta);color:var(--cta-ink);border-radius:18px;padding:16px;font-size:16px;font-weight:900;width:100%;box-shadow:var(--shadow)}
+.cta{background:var(--cta);color:var(--cta-ink);border-radius:18px;padding:14px;font-size:16px;font-weight:900;width:100%;box-shadow:var(--shadow)}
 .cta[disabled]{opacity:.4}
+.bottom{flex:none;display:flex;gap:8px;align-items:center}
+.bottom .seg{padding:3px}.bottom .seg button{padding:8px 10px;font-size:12px}
+#actions{flex:1;min-width:0}#actions .row2{gap:6px}#actions .ghost{padding:14px 8px}
 .row2{display:flex;gap:10px}.row2>*{flex:1}
-.ghost{background:var(--card);border:1px solid var(--card-line);border-radius:18px;padding:14px;font-weight:800}
+.ghost{background:var(--card);border:1px solid var(--card-line);border-radius:18px;padding:12px;font-weight:800}
 .verdict{font:900 22px var(--f-jp)}
 .verdict.ok{color:var(--ok)}.verdict.ng{color:var(--ng)}
 .small-btn{font-size:12px;font-weight:700;color:var(--ink-2);padding:6px 12px;border-radius:99px;background:var(--card-solid)}
-.wave{display:flex;gap:3px;align-items:center;height:44px}
+.wave{display:flex;gap:3px;align-items:center;height:40px;flex:none}
 .wave i{width:4px;border-radius:2px;background:var(--accent);height:6px;transition:height .08s}
 .transcript{font:600 15px var(--f-en);color:var(--ink-2);text-align:center;min-height:20px}
 .note{font-size:12px;color:var(--ink-2);text-align:center;max-width:300px}
@@ -150,22 +148,24 @@ button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .tabs{display:flex;gap:6px;padding:4px;border-radius:99px}
 .tabs button{padding:8px 14px;border-radius:99px;font-size:13px;font-weight:800;color:var(--ink-2)}
 .tabs button.on{background:var(--cta);color:var(--cta-ink)}
-.hero40{display:flex;align-items:center;gap:12px;padding:14px 16px}
-.hero40 b{font:900 46px/1 var(--f-en);white-space:nowrap} .hero40 b span{font-size:16px}
-.hero40 p{margin:0;font-size:13px;color:var(--ink-2)}
-.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
-.chips button{flex:none;padding:6px 12px;border-radius:99px;background:var(--card);border:1px solid var(--card-line);font-size:12px;font-weight:800}
-.cat h3{font-size:14px;margin:8px 0 8px} .cat h3 small{color:var(--ink-2);font-family:var(--f-en)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.wcard{padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;border-radius:16px}
-.wcard b{font:900 20px var(--f-en)}
-.wcard small{font-size:11px;color:var(--ink-2)} .wcard small em{font-style:normal;color:var(--accent-deep);font-weight:900}
-.detail{padding:16px;display:flex;flex-direction:column;gap:8px}
-.detail b{font:900 30px var(--f-en)}
-.detail .ex{font:600 15px var(--f-en)}
-.chunk{text-align:left;display:flex;justify-content:space-between;align-items:center;padding:12px 14px;gap:10px}
-.chunk .en{font-weight:800;font-size:16px}.chunk>span:first-child{min-width:0}.chunk .kana{color:var(--accent-deep);font-weight:900}
-.chunk small{display:block;color:var(--ink-2);font-size:12px}
+.chips{flex:none;display:flex;flex-wrap:wrap;gap:5px}
+.chips button.on{background:var(--cta);color:var(--cta-ink)}
+.chips button{flex:none;padding:5px 9px;border-radius:99px;background:var(--card);border:1px solid var(--card-line);font-size:12px;font-weight:800}
+.grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:6px;align-content:stretch}
+.grid.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wcard{padding:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-radius:12px;max-height:64px;min-height:0;overflow:hidden}
+.wcard.sel{outline:2px solid var(--accent)}
+.wcard b{font:900 17px var(--f-en)}
+.wcard small{font-size:11px;color:var(--accent-deep);font-weight:900}
+.detail{flex:none;padding:10px 14px;display:flex;align-items:center;gap:12px;min-height:58px}
+.detail .txt{flex:1;min-width:0;font-size:13px}
+.detail .txt div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.detail b{font:900 24px var(--f-en)}
+.detail .ex{font:600 13px var(--f-en);color:var(--ink-2)}
+.detail .ghost{flex:none;padding:8px 12px;font-size:12px}
+.chunk{text-align:left;display:flex;justify-content:space-between;align-items:center;padding:4px 12px;gap:8px;border-radius:14px;min-height:0;max-height:60px;overflow:hidden}
+.chunk.sel{outline:2px solid var(--accent)}
+.chunk .en{font-weight:800;font-size:14px;white-space:nowrap}.chunk>span:first-child{min-width:0}.chunk .kana{color:var(--accent-deep);font-weight:900}
 
 .sheet-back{position:fixed;inset:0;background:rgba(30,15,0,.35);display:flex;align-items:flex-end;justify-content:center;z-index:20}
 .sheet{width:100%;max-width:460px;max-height:75%;overflow:auto;border-radius:22px 22px 0 0;padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--card-solid)}
@@ -174,6 +174,17 @@ button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .sheet button.item .no{width:28px;color:var(--ink-3);font-variant-numeric:tabular-nums;flex:none}
 .sheet button.item .mark{margin-left:auto;color:var(--ok);font-weight:900}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--cta);color:var(--cta-ink);padding:10px 18px;border-radius:99px;font-weight:800;z-index:30;box-shadow:var(--shadow)}
+@media (max-height:640px){
+  .stage{gap:8px;padding:10px}
+  .big{width:76px;height:76px;margin:8px 0;box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 14%,transparent)}
+  .big svg{width:24px;height:24px}.big .word{font-size:18px}
+  .slot{min-width:38px;height:38px;font-size:14px}
+  .opt{padding:6px 11px;font-size:14px}.options{gap:6px}
+  .tok.beat{font-size:19px}.tok.glue{font-size:12px}
+  .heading h2{font-size:18px}
+  .step{font-size:10px;padding:4px 2px}
+  .wave{height:30px}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -370,13 +381,12 @@ const ICON={
 function renderHome(){
   stopAll();S.view="home";
   const cur=currentLevel();const total=Object.keys(S.done).length;
-  const today=new Date().toDateString();const todayN=S.today.d===today?S.today.n:0;
-  const last=S.last&&ALL.find(s=>s.id===S.last.id);
+    const last=S.last&&ALL.find(s=>s.id===S.last.id);
   const cont=last||byLv(cur).find(s=>!S.done[s.id])||byLv(cur)[0];
   $("#app").innerHTML=`<div class="view">
    <div class="brand"><div class="logo">${ICON.logo}</div><h1>Beat Master</h1></div>
    <section class="glass types" aria-label="4つの型">
-     <header><span>4つの型</span><span class="en">${[2,3,4,5].filter(l=>doneIn(l)===25).length}/4</span></header>
+     <header><span>4つの型</span><span class="en">${total} / 100</span></header>
      <div class="row">${[2,3,4,5].map(l=>`<button class="type-tile" data-lv="${l}">${dots(l)}<small class="${doneIn(l)===25?"done":""}">${doneIn(l)===25?"✓":l+"ビート"}</small></button>`).join("")}</div>
    </section>
    <div class="levels">${LEVELS.map(l=>{const d=doneIn(l);return `<button class="glass level ${l===cur?"current":""}" data-lv="${l}">
@@ -384,14 +394,10 @@ function renderHome(){
      <div class="right">${d===25?`<span class="check">✓</span>`:(l===cur?`<span class="badge">いまここ</span>`:"")}${d<25?`<span>${d} / 25</span>`:""}</div></button>`}).join("")}</div>
    <button class="continue" id="cont"><span class="play">${ICON.play}</span><div><strong>続きから</strong><small class="en">${cont.lv}ビート ・ ${esc(cont.text)}</small></div><span aria-hidden="true">›</span></button>
    <div class="tools">
-     <button class="glass tool" id="lib"><span class="ico">a·the</span><span><strong>接着剤40個</strong><small>音のライブラリ</small></span></button>
-     <button class="glass tool" id="rnd"><span class="ico">${ICON.shuffle}</span><span><strong>ランダム出題</strong><small>4つの型をまぜて</small></span></button>
+     <button class="glass tool" id="lib"><span class="ico">a·the</span><strong>接着剤40個</strong></button>
+     <button class="glass tool" id="rnd"><span class="ico">${ICON.shuffle}</span><strong>ランダム出題</strong></button>
    </div>
-   <section class="glass stats" aria-label="学習進捗">
-     <div><b>${total}</b><small>完了 / 100文</small><div class="bar"><i style="width:${total}%"></i></div></div>
-     <div><b>${todayN}</b><small>今日の練習</small></div>
-     <div><b>${[2,3,4,5].filter(l=>doneIn(l)===25).length}</b><small>マスターした型</small></div>
-   </section></div>`;
+</div>`;
   document.querySelectorAll("[data-lv]").forEach(b=>b.onclick=()=>{const lv=+b.dataset.lv;const list=byLv(lv);const s=list.find(x=>!S.done[x.id])||list[0];startLesson({mode:"level",lv,idx:s.idx})});
   $("#cont").onclick=()=>startLesson({mode:"level",lv:cont.lv,idx:cont.idx});
   $("#lib").onclick=renderLibrary;
@@ -409,7 +415,7 @@ let L={};function resetStep(){L={answer:[],checked:false,correct:false,opts:null
 function stepTitle(){return[["ビートはどれ？",`文字なしで聞いて、${cur().beats.length}つ当てる`],["手拍子に合わせて言う",L.clapMode==="beats"?"手拍子に合わせて、ビートだけを言う":"間も入れて全文。間は小さく雑に"],["全文を言ってみる","ビートが伝われば合格。間は雑でOK"]][S.step-1]}
 function sentenceHTML(s,opts={}){return `<div class="sentence ${opts.beatsOnly?"beats-only":""}" id="sent">${s.toks.map((t,i)=>t.t==="beat"?`<span class="tok beat" data-i="${i}">${esc(t.text)}</span>`:`<span class="tok glue" data-i="${i}">${opts.kana?`<span class="kana">${esc(t.kana)}</span>`:""}${esc(t.text)}</span>`).join("")}</div>`}
 function renderLesson(){
-  S.view="lesson";const s=cur();const [ttl,sub]=stepTitle();
+  S.view="lesson";const s=cur();const [ttl]=stepTitle();
   const label=S.lesson.mode==="random"?`ランダム・${s.lv}ビート`:`${s.lv}ビート`;
   const pos=S.lesson.pos+1,n=S.lesson.list.length;
   $("#app").innerHTML=`<div class="view">
@@ -417,10 +423,10 @@ function renderLesson(){
      <button class="title-btn" id="pick">${label} <small>${pos} / ${n} ▾</small></button>
      <button class="icon-btn ${S.trans?"on":""}" id="tr" aria-label="訳を表示">訳</button></div>
    <nav class="glass steps">${["リスニングテスト","手拍子特訓","スピーキングテスト"].map((x,i)=>`<button class="step ${S.step===i+1?"active":""} ${S.step>i+1?"done":""}" data-st="${i+1}"><span class="n">${S.step>i+1?"✓":i+1}</span>${x}</button>`).join("")}</nav>
-   <div class="heading"><h2>${ttl}</h2><p>${sub}</p></div>
+   <div class="heading"><h2>${ttl}</h2></div>
    <section class="glass stage" id="stage"></section>
-   <div class="glass seg" id="speed">${SPEEDS.map((x,i)=>(S.step===1&&i===2)?"":`<button class="${S.speed===i?"on":""}" data-sp="${i}">${x}</button>`).join("")}</div>
-   <div id="actions"></div></div>`;
+   <div class="bottom"><div class="glass seg" id="speed">${SPEEDS.map((x,i)=>(S.step===1&&i===2)?"":`<button class="${S.speed===i?"on":""}" data-sp="${i}">${x}</button>`).join("")}</div>
+   <div id="actions"></div></div></div>`;
   $("#back").onclick=renderHome;
   $("#tr").onclick=()=>{S.trans=!S.trans;renderLesson()};
   $("#pick").onclick=openPicker;
@@ -440,15 +446,14 @@ function renderListen(){
   if(!L.checked){
     st.innerHTML=`<div class="slots">${s.beats.map((_,i)=>`<button class="slot ${L.answer[i]?"filled":""} ${i===L.answer.length?"next":""}" data-slot="${i}">${L.answer[i]?esc(L.answer[i].w):"?"}</button>`).join("")}</div>
      <button class="big solid" id="listen" aria-label="音声を聞く">${ICON.wave}<span>聞く</span></button>
-     <div class="options">${L.opts.map(o=>`<button class="opt" data-k="${o.k}" ${L.answer.some(a=>a.k===o.k)?"disabled":""}>${esc(o.w)}</button>`).join("")}</div>
-     <p class="note">聞こえた強い単語（ビート）を、聞こえた順にタップ</p>`;
+     <div class="options">${L.opts.map(o=>`<button class="opt" data-k="${o.k}" ${L.answer.some(a=>a.k===o.k)?"disabled":""}>${esc(o.w)}</button>`).join("")}</div>`;
     act.innerHTML=`<button class="cta" id="check" ${L.answer.length<s.beats.length?"disabled":""}>答え合わせ</button>`;
     $("#listen").onclick=()=>{const b=$("#listen");b.classList.add("pulse");speak(s.text,{onEnd:()=>b.classList.remove("pulse")})};
     st.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{if(L.answer.length>=s.beats.length)return;L.answer.push(L.opts.find(o=>o.k===b.dataset.k));renderListen()});
     st.querySelectorAll("[data-slot]").forEach(b=>b.onclick=()=>{const i=+b.dataset.slot;if(L.answer[i]){L.answer.splice(i);renderListen()}});
     $("#check").onclick=()=>{L.checked=true;L.correct=L.answer.every((a,i)=>norm(a.w)===norm(s.beats[i]));renderLesson()};
   } else {
-    $(".heading h2").textContent=L.correct?"正解":"おしい！";$(".heading p").textContent="音に合わせて、ビートが光る";
+    $(".heading h2").textContent=L.correct?"正解":"おしい！";
     st.innerHTML=`<div class="slots">${s.beats.map((b,i)=>`<span class="slot ${norm(L.answer[i].w)===norm(b)?"ok":"ng"}">${esc(L.answer[i].w)}</span>`).join("")}</div>
      ${sentenceHTML(s)}${transHTML()}
      <button class="big" id="replay" aria-label="もう一度聞く">${ICON.wave}<span>もう一度</span></button>`;
@@ -467,11 +472,9 @@ function lightAt(ci){const s=cur();document.querySelectorAll("#sent .tok").forEa
 let clapTimer=null,clapTimers=[];
 function renderClap(){
   const s=cur();const st=$("#stage"),act=$("#actions");
-  st.innerHTML=`<div class="glass seg" style="box-shadow:none"><button class="${L.clapMode==="beats"?"on":""}" data-cm="beats">ビートだけ</button><button class="${L.clapMode==="full"?"on":""}" data-cm="full">全文</button></div>
+  st.innerHTML=`<div class="row2" style="align-items:center;flex:none"><div class="glass seg" style="box-shadow:none"><button class="${L.clapMode==="beats"?"on":""}" data-cm="beats">ビートだけ</button><button class="${L.clapMode==="full"?"on":""}" data-cm="full">全文</button></div><button class="small-btn" id="model" style="flex:none">お手本</button></div>
    ${sentenceHTML(s,{kana:true,beatsOnly:L.clapMode==="beats"})}${transHTML()}
-   <button class="big ${L.clapOn?"":"solid"}" id="clapBtn" aria-label="手拍子を再生/停止">${L.clapOn?`<span class="word en" id="cw">·</span><span>止める</span>`:`${ICON.play}<span>手拍子</span>`}</button>
-   <button class="small-btn" id="model">お手本を聞く</button>
-   <p class="note">手拍子＝ビート。手拍子のあいだに接着剤（カナ）を小さく速く押し込む。</p>`;
+   <button class="big ${L.clapOn?"":"solid"}" id="clapBtn" aria-label="手拍子を再生/停止">${L.clapOn?`<span class="word en" id="cw">·</span><span>止める</span>`:`${ICON.play}<span>手拍子</span>`}</button>`;
   act.innerHTML=`<button class="cta" id="next">次へ</button>`;
   st.querySelectorAll("[data-cm]").forEach(b=>b.onclick=()=>{L.clapMode=b.dataset.cm;const on=L.clapOn;stopClap();renderLesson();if(on)startClap()});
   $("#clapBtn").onclick=()=>{if(L.clapOn){stopClap();renderClap()}else startClap()};
@@ -512,7 +515,7 @@ function renderSpeak(){
    <button class="big ${L.rec?"":"solid"}" id="micBtn" aria-label="録音開始/停止">${L.rec?`<span>止める</span>`:`${ICON.mic}<span>話す</span>`}</button>
    <div class="wave" id="wave">${"<i></i>".repeat(28)}</div>
    <div class="transcript en" id="heard">${esc(L.heard)}</div>
-   ${L.passed?`<div class="verdict ok">伝わった！合格</div>`:`<p class="note" id="snote">${L.note||"マイクに向かって全文を言おう。ビートの単語が聞き取れたら合格。"}</p>`}`;
+   ${L.passed?`<div class="verdict ok">合格！</div>`:(L.note?`<p class="note">${L.note}</p>`:"")}`;
   act.innerHTML=`<button class="cta" id="done">できた ✓</button>`;
   markHeard();
   $("#micBtn").onclick=()=>L.rec?stopRec(true):startRec();
@@ -524,11 +527,11 @@ function startRec(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   L.heard="";L.passed=false;L.rec=true;L.note="";renderSpeak();
   startWave();
-  if(!SR){L.note="この環境では音声認識が使えません。声に出して言えたら「できた」を押してね。";setTimeout(()=>stopRec(true),4000);return}
-  try{rec=new SR();}catch(e){rec=null;L.note="音声認識を開始できませんでした。";stopRec(true);return}
+  if(!SR){L.note="音声認識なし";setTimeout(()=>stopRec(true),4000);return}
+  try{rec=new SR();}catch(e){rec=null;L.note="音声認識なし";stopRec(true);return}
   rec.lang="en-US";rec.interimResults=true;rec.continuous=false;
   rec.onresult=e=>{L.heard=Array.from(e.results).map(r=>r[0].transcript).join(" ");const el=$("#heard");if(el)el.textContent=L.heard;markHeard()};
-  rec.onerror=e=>{L.note=e.error==="not-allowed"||e.error==="service-not-allowed"?"マイクが使えない環境です。声に出して言えたら「できた」を押してね。":"うまく聞き取れませんでした。もう一度どうぞ。"};
+  rec.onerror=e=>{L.note=e.error==="not-allowed"||e.error==="service-not-allowed"?"マイクが使えません":"もう一度"};
   rec.onend=()=>{rec=null;stopRec(true)};
   try{rec.start()}catch(e){stopRec(true)}
 }
@@ -538,7 +541,7 @@ function stopRec(rerender){
   if(!L.rec)return;L.rec=false;
   const s=cur();const words=new Set(L.heard.split(/\s+/).map(norm));
   if(L.heard){const hit=s.beats.filter(b=>words.has(norm(b))).length;L.passed=hit===s.beats.length;
-    if(!L.passed)L.note=`ビート ${hit}/${s.beats.length} が伝わった。強い単語をはっきり、もう一度！`}
+    if(!L.passed)L.note=`ビート ${hit} / ${s.beats.length}`}
   if(rerender&&S.view==="lesson"&&S.step===3)renderSpeak();
 }
 function startWave(){
@@ -569,25 +572,28 @@ function openPicker(){
 /* ---------- Library ---------- */
 function renderLibrary(){
   stopAll();S.view="lib";
-  const words=S.lib==="words";
+  const words=S.lib==="words";if(S.libCat==null)S.libCat=-1;
+  const list=words?(S.libCat<0?GLUE.flatMap(g=>g[1]):GLUE[S.libCat][1]):CHUNKS;
   $("#app").innerHTML=`<div class="view">
    <div class="top"><button class="icon-btn" id="back" aria-label="ホームへ">${ICON.back}</button>
      <div class="glass tabs"><button class="${words?"on":""}" data-t="words">接着剤40個</button><button class="${!words?"on":""}" data-t="chunks">崩れ方</button></div><span style="width:40px"></span></div>
-   ${words?`<div class="glass hero40"><b>40<span>個</span></b><p>英語の接着剤は、これで全部。<br>強く読まず、小さく速く。タップで音を確認。</p></div>
-   <div class="chips">${GLUE.map(([c,l],i)=>`<button data-jump="${i}">${c} ${l.length}</button>`).join("")}</div>
-   <div id="detail"></div>
-   ${GLUE.map(([c,l],i)=>`<section class="cat" id="cat${i}"><h3>${c} <small>${l.length}</small></h3><div class="grid">${l.map(w=>`<button class="glass wcard" data-w="${w[0]}"><b>${w[0]}</b><small>${w[1]} → <em>${w[2]}</em></small></button>`).join("")}</div></section>`).join("")}`
-   :`<div class="glass hero40"><b>16<span>個</span></b><p>接着剤どうしがくっつくと、音がこう崩れる。<br>ネイティブの「速い英語」の正体。</p></div>
-   ${CHUNKS.map(c=>`<button class="glass chunk" data-c="${esc(c[0])}"><span><span class="en">${esc(c[0])}</span><small class="en">${esc(c[2])}</small></span><span class="kana">${c[1]}</span></button>`).join("")}`}
+   ${words?`<div class="chips"><button class="${S.libCat<0?"on":""}" data-cat="-1">すべて</button>${GLUE.map(([c,l],i)=>`<button class="${S.libCat===i?"on":""}" data-cat="${i}">${c}</button>`).join("")}</div>`:""}
+   <div class="grid ${words?"":"cols2"}">${words
+     ?list.map(w=>`<button class="glass wcard" data-w="${w[0]}"><b>${w[0]}</b><small>${w[2]}</small></button>`).join("")
+     :list.map((c,i)=>`<button class="glass chunk" data-c="${i}"><span class="en">${esc(c[0])}</span><span class="kana">${c[1]}</span></button>`).join("")}</div>
+   <div class="glass detail" id="detail"><span class="ex">${words?"単語をタップ":"フレーズをタップ"}</span></div>
   </div>`;
   $("#back").onclick=renderHome;
   document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{S.lib=b.dataset.t;renderLibrary()});
-  document.querySelectorAll("[data-jump]").forEach(b=>b.onclick=()=>document.getElementById("cat"+b.dataset.jump).scrollIntoView({behavior:"smooth"}));
-  document.querySelectorAll("[data-w]").forEach(b=>b.onclick=()=>{const w=GLUE.flatMap(g=>g[1]).find(x=>x[0]===b.dataset.w);
-    $("#detail").innerHTML=`<div class="glass detail"><b>${w[0]}</b><div>辞書の音 <strong>${w[1]}</strong> → 会話の音 <strong style="color:var(--accent-deep)">${w[2]}</strong></div><div class="ex">${esc(w[3])}</div><div class="row2"><button class="ghost" id="pw">単語を聞く</button><button class="ghost" id="pe">例を聞く</button></div></div>`;
-    $("#pw").onclick=()=>speak(w[0],{rate:.8});$("#pe").onclick=()=>speak(w[3].split("→")[0].trim(),{rate:RATES[S.speed]});
-    speak(w[0],{rate:.8});$("#detail").scrollIntoView({behavior:"smooth",block:"nearest"})});
-  document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{const c=CHUNKS.find(x=>x[0]===b.dataset.c);speak(c[2].split("→")[0].trim(),{rate:1})});
+  document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{S.libCat=+b.dataset.cat;renderLibrary()});
+  const sel=b=>{document.querySelectorAll(".sel").forEach(x=>x.classList.remove("sel"));b.classList.add("sel")};
+  document.querySelectorAll("[data-w]").forEach(b=>b.onclick=()=>{sel(b);const w=GLUE.flatMap(g=>g[1]).find(x=>x[0]===b.dataset.w);
+    $("#detail").innerHTML=`<b>${w[0]}</b><div class="txt"><div>${w[1]} → <strong style="color:var(--accent-deep)">${w[2]}</strong></div><div class="ex">${esc(w[3])}</div></div><button class="ghost" id="pe">例を聞く</button>`;
+    $("#pe").onclick=()=>speak(w[3].split("→")[0].trim(),{rate:RATES[S.speed]});
+    speak(w[0],{rate:.8})});
+  document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{sel(b);const c=CHUNKS[+b.dataset.c];
+    $("#detail").innerHTML=`<div class="txt"><div class="en" style="font-weight:800">${esc(c[2].split("→")[0].trim())}</div><div style="color:var(--accent-deep);font-weight:900">${esc(c[2].split("→")[1].trim())}</div></div><button class="ghost" id="pe">もう一度</button>`;
+    const play=()=>speak(c[2].split("→")[0].trim(),{rate:1});$("#pe").onclick=play;play()});
 }
 
 renderHome();
